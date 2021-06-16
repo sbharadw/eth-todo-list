@@ -25,7 +25,8 @@ loadWeb3: async () => {
       window.web3 = new Web3(ethereum)
       try {
         // Request account access if needed
-        await ethereum.enable()
+        //await ethereum.enable()
+        await ethereum.send('eth_sendTransaction', { from: accounts[0], /* ... */ })
         // Acccounts now exposed
         web3.eth.sendTransaction({/* ... */})
       } catch (error) {
